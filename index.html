@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Novaly X Cash — Brand Guide</title>
+<meta name="description" content="Guía de marca oficial de Novaly X Cash. Colores, tipografía, logo, tono de voz y aplicaciones.">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --nv-orange: #F5820A;
+    --nv-orange-dark: #C56800;
+    --nv-orange-light: #FF9A2E;
+    --nv-gold: #F5C518;
+    --nv-gold-dark: #C49E00;
+    --nv-gold-light: #FFD84D;
+    --nv-purple: #7B4FD4;
+    --nv-purple-dark: #5A35A8;
+    --nv-purple-light: #9B74E8;
+    --nv-navy: #1A1F2E;
+    --nv-navy-dark: #0E1119;
+    --nv-navy-light: #252B3F;
+    --nv-white: #FFFFFF;
+    --nv-gray-900: #222230;
+    --nv-gray-700: #555566;
+    --nv-gray-500: #888899;
+    --nv-gray-300: #CCCCDD;
+    --nv-gray-100: #F0F0F5;
+  }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--nv-white);
+    color: var(--nv-gray-900);
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(26, 31, 46, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+  }
+  .nav.visible { transform: translateY(0); }
+  .nav-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    height: 56px;
+    gap: 0.25rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nav-inner::-webkit-scrollbar { display: none; }
+  .nav-brand {
+    font-weight: 800;
+    font-size: 0.9rem;
+    color: white;
+    margin-right: 1.5rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .nav-brand span { color: var(--nv-orange); }
+  .nav a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    transition: all 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .nav a:hover { color: white; background: rgba(255,255,255,0.08); }
+  .nav a.active { color: white; background: rgba(245,130,10,0.25); }
+
+  /* COVER */
+  .cover {
+    background: linear-gradient(135deg, var(--nv-navy-dark) 0%, var(--nv-navy) 40%, var(--nv-purple-dark) 100%);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 50% 50%, rgba(245,130,10,0.1) 0%, transparent 50%);
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    right: -30%;
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(circle at 50% 50%, rgba(123,79,212,0.1) 0%, transparent 50%);
+  }
+  .cover img {
+    width: 200px;
+    height: 200px;
+    border-radius: 24px;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  .cover h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    position: relative;
+    z-index: 1;
+  }
+  .cover h1 .x { color: var(--nv-orange); }
+  .cover h1 .cash {
+    background: linear-gradient(90deg, var(--nv-orange), var(--nv-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .cover p {
+    font-size: 1.25rem;
+    color: rgba(255,255,255,0.6);
+    margin-top: 0.5rem;
+    position: relative;
+    z-index: 1;
+  }
+  .cover .tagline {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.85);
+    margin-top: 1rem;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+  .cover .version {
+    margin-top: 3rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.35);
+    position: relative;
+    z-index: 1;
+  }
+  .cover .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.3);
+    font-size: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    animation: bounce 2s infinite;
+  }
+  .cover .scroll-hint svg {
+    width: 20px;
+    height: 20px;
+    stroke: rgba(255,255,255,0.3);
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* SECTIONS */
+  .section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+  }
+  .section-dark { background: var(--nv-gray-100); }
+  .section-navy { background: var(--nv-navy); color: white; }
+  .section-navy .section { color: white; }
+  .section-navy p, .section-navy li { color: rgba(255,255,255,0.7); }
+  .section-navy .divider { background: var(--nv-orange); }
+  .section-navy .voice-table th { color: rgba(255,255,255,0.5); }
+  .section-navy .voice-table td { color: rgba(255,255,255,0.8); }
+  .section-navy .voice-table th, .section-navy .voice-table td { border-bottom-color: rgba(255,255,255,0.1); }
+  .section h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+  .section h2 .num {
+    color: var(--nv-orange);
+    font-size: 1rem;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .section h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 2rem 0 0.75rem;
+  }
+  .section p, .section li {
+    font-size: 1rem;
+    color: var(--nv-gray-700);
+    line-height: 1.7;
+  }
+  .divider {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--nv-orange), var(--nv-gold));
+    border-radius: 2px;
+    margin: 1rem 0 2rem;
+  }
+
+  /* ANIMATE ON SCROLL */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* COLOR PALETTE */
+  .palette {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  .color-card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .color-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+  .color-swatch {
+    height: 100px;
+    display: flex;
+    align-items: flex-end;
+    padding: 0.75rem;
+    position: relative;
+  }
+  .color-swatch span {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  }
+  .color-info {
+    padding: 0.75rem;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .color-info .name {
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+  .color-info .hex {
+    font-size: 0.8rem;
+    color: var(--nv-gray-500);
+    font-family: 'Courier New', monospace;
+  }
+  .copied-toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--nv-navy);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 200;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .copied-toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* TYPOGRAPHY */
+  .type-sample {
+    margin: 1.5rem 0;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid var(--nv-gray-300);
+  }
+  .type-sample .label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--nv-gray-500);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+  .type-sample .demo { color: var(--nv-gray-900); }
+
+  /* LOGO RULES */
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  .logo-box {
+    border-radius: 12px;
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px;
+    position: relative;
+    transition: transform 0.2s;
+  }
+  .logo-box:hover { transform: scale(1.02); }
+  .logo-box img {
+    width: 140px;
+    height: 140px;
+    border-radius: 16px;
+  }
+  .logo-box .tag {
+    position: absolute;
+    bottom: 0.75rem;
+    left: 0.75rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .logo-box.dark { background: var(--nv-navy); }
+  .logo-box.dark .tag { background: rgba(255,255,255,0.15); color: white; }
+  .logo-box.light { background: var(--nv-gray-100); border: 1px solid var(--nv-gray-300); }
+  .logo-box.light .tag { background: rgba(0,0,0,0.08); color: var(--nv-gray-700); }
+  .logo-box.orange { background: linear-gradient(135deg, var(--nv-orange), var(--nv-gold)); }
+  .logo-box.orange .tag { background: rgba(255,255,255,0.25); color: white; }
+  .logo-box.purple { background: linear-gradient(135deg, var(--nv-purple-dark), var(--nv-purple)); }
+  .logo-box.purple .tag { background: rgba(255,255,255,0.2); color: white; }
+
+  /* DOWNLOAD BUTTON */
+  .download-btn {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s, background 0.2s;
+  }
+  .logo-box:hover .download-btn { opacity: 1; }
+  .download-btn:hover { background: rgba(255,255,255,0.3); }
+  .download-btn svg { width: 16px; height: 16px; stroke: white; }
+  .logo-box.light .download-btn { background: rgba(0,0,0,0.08); }
+  .logo-box.light .download-btn:hover { background: rgba(0,0,0,0.15); }
+  .logo-box.light .download-btn svg { stroke: var(--nv-gray-700); }
+
+  /* VOICE TABLE */
+  .voice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+  }
+  .voice-table th, .voice-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--nv-gray-300);
+    font-size: 0.95rem;
+  }
+  .voice-table th {
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--nv-gray-500);
+  }
+  .do { color: #16a34a; font-weight: 600; }
+  .dont { color: #ef4444; font-weight: 600; }
+
+  /* TAGLINE CARDS */
+  .tagline-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  .tagline-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .tagline-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--nv-orange);
+  }
+  .tagline-card .context {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--nv-orange);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+  }
+  .tagline-card .phrase {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1.4;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--nv-navy-dark);
+    color: rgba(255,255,255,0.3);
+    text-align: center;
+    padding: 3rem 2rem;
+    font-size: 0.85rem;
+  }
+  .footer img {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    opacity: 0.6;
+  }
+  .footer-links {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .footer-links a {
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: rgba(255,255,255,0.7); }
+
+  @media (max-width: 640px) {
+    .cover h1 { font-size: 2.5rem; }
+    .cover img { width: 140px; height: 140px; }
+    .section { padding: 3rem 1.25rem; }
+    .logo-grid { grid-template-columns: 1fr; }
+    .tagline-grid { grid-template-columns: 1fr; }
+    .nav-inner { padding: 0 1rem; }
+  }
+
+  @media print {
+    .nav { display: none; }
+    .cover { min-height: auto; padding: 3rem 2rem; }
+    .section { padding: 2rem; }
+    .color-swatch { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .fade-in { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <div class="nav-brand">Novaly <span>X Cash</span></div>
+    <a href="#identidad">Identidad</a>
+    <a href="#logo">Logo</a>
+    <a href="#colores">Colores</a>
+    <a href="#tipografia">Tipografia</a>
+    <a href="#voz">Tono de Voz</a>
+    <a href="#aplicaciones">Aplicaciones</a>
+    <a href="#social">Social Media</a>
+    <a href="#assets">Assets</a>
+  </div>
+</nav>
+
+<!-- TOAST -->
+<div class="copied-toast" id="toast"></div>
+
+<!-- COVER -->
+<div class="cover">
+  <img src="logo.svg" alt="Novaly X Cash Logo">
+  <h1>Novaly <span class="x">X</span> <span class="cash">Cash</span></h1>
+  <p>Brand Guide</p>
+  <div class="tagline">"Tu gente es tu negocio."</div>
+  <div class="version">Marzo 2026 &middot; v1.0</div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 5v14M5 12l7 7 7-7"/>
+    </svg>
+  </div>
+</div>
+
+<!-- 01. IDENTITY -->
+<div class="section fade-in" id="identidad">
+  <h2><span class="num">01 &mdash; Identidad</span>Quienes Somos</h2>
+  <div class="divider"></div>
+  <p>Novaly X Cash es una plataforma SaaS de cadenas de ahorro rotativo (ROSCA) digitales + comunidad financiera, distribuida como franquicia digital via marketing de afiliados recurrente. Cada usuario puede usar la plataforma y vender la membresia al mismo tiempo.</p>
+
+  <h3>Mision</h3>
+  <p>Democratizar el acceso a herramientas de ahorro colaborativo en Colombia y LATAM, empoderando a cualquier persona a construir un ingreso recurrente distribuyendo la plataforma como afiliado.</p>
+
+  <h3>Vision</h3>
+  <p>Ser la plataforma lider de finanzas colaborativas en Latinoamerica, donde ahorrar en grupo sea tan facil como enviar un mensaje y cada usuario sea tambien un emprendedor.</p>
+
+  <h3>Arquitectura del nombre</h3>
+  <table class="voice-table">
+    <tr><th>Contexto</th><th>Nombre</th></tr>
+    <tr><td>Logo, app, redes sociales</td><td><strong>Novaly</strong></td></tr>
+    <tr><td>Nombre legal / registro SIC</td><td>Novaly X Cash</td></tr>
+    <tr><td>Dominio principal</td><td>novalyxcash.com</td></tr>
+    <tr><td>Boca a boca</td><td><em>"Ya entraste a Novaly?"</em></td></tr>
+  </table>
+  <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--nv-gray-500);">"Novaly" opera como marca corta en el dia a dia &mdash; exactamente como Hotmart funciona sin que nadie diga "Hotmart Platform". "X Cash" es el descriptor funcional del nombre completo.</p>
+</div>
+
+<!-- TAGLINES (dark section) -->
+<div class="section-navy">
+  <div class="section fade-in">
+    <h2 style="color: white;"><span class="num">01b &mdash; Taglines</span>Frases de Marca</h2>
+    <div class="divider"></div>
+    <div class="tagline-grid">
+      <div class="tagline-card">
+        <div class="context">Tagline oficial</div>
+        <div class="phrase">"Tu gente es tu negocio."</div>
+      </div>
+      <div class="tagline-card">
+        <div class="context">Landing page</div>
+        <div class="phrase">"La comunidad que te paga."</div>
+      </div>
+      <div class="tagline-card">
+        <div class="context">Redes sociales</div>
+        <div class="phrase">"Refiere. Cobra. Repite."</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 02. LOGO -->
+<div class="section-dark">
+  <div class="section fade-in" id="logo">
+    <h2><span class="num">02 &mdash; Logo</span>Uso del Logo</h2>
+    <div class="divider"></div>
+    <p>El logo de Novaly combina el icono NX con una flecha ascendente integrada en gradiente naranja-dorado y morado. Wordmark "Novaly" en blanco, "X Cash" en gradiente calido. Transmite crecimiento, flujo de dinero y modernidad financiera.</p>
+
+    <div class="logo-grid">
+      <div class="logo-box dark">
+        <img src="logo.svg" alt="Logo on navy">
+        <button class="download-btn" title="Descargar logo" data-filename="novaly-logo-dark.png"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></button>
+        <span class="tag">Fondo navy (principal)</span>
+      </div>
+      <div class="logo-box light">
+        <img src="logo.svg" alt="Logo on light">
+        <button class="download-btn" title="Descargar logo" data-filename="novaly-logo-light.png"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></button>
+        <span class="tag">Fondo claro</span>
+      </div>
+      <div class="logo-box orange">
+        <img src="logo.svg" alt="Logo on orange">
+        <button class="download-btn" title="Descargar logo" data-filename="novaly-logo-orange.png"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></button>
+        <span class="tag">Gradiente naranja-dorado</span>
+      </div>
+      <div class="logo-box purple">
+        <img src="logo.svg" alt="Logo on purple">
+        <button class="download-btn" title="Descargar logo" data-filename="novaly-logo-purple.png"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></button>
+        <span class="tag">Gradiente morado</span>
+      </div>
+    </div>
+
+    <h3>Reglas de uso</h3>
+    <table class="voice-table">
+      <tr><th style="width:35%">Regla</th><th>Detalle</th></tr>
+      <tr><td>Nombre</td><td><strong>"Novaly"</strong> en uso diario. <strong>"Novaly X Cash"</strong> en contexto legal/formal. Nunca "novaly", "NOVALY", "Novaly x cash".</td></tr>
+      <tr><td>Espacio minimo</td><td>Mantener al menos el 25% del ancho del logo como espacio libre alrededor.</td></tr>
+      <tr><td>Tamano minimo</td><td>40px de ancho para digital, 15mm para impreso.</td></tr>
+      <tr><td>Fondo preferido</td><td>Navy oscuro (#1A1F2E). El logo fue disenado para fondos oscuros.</td></tr>
+      <tr><td>No distorsionar</td><td>No rotar, estirar, recortar ni aplicar efectos al logo.</td></tr>
+    </table>
+
+    <h3>Versiones pendientes</h3>
+    <table class="voice-table">
+      <tr><th>Version</th><th>Estado</th></tr>
+      <tr><td>Logo principal (navy)</td><td style="color: #16a34a; font-weight: 600;">Aprobado</td></tr>
+      <tr><td>Variante fondo claro</td><td style="color: var(--nv-orange); font-weight: 600;">Pendiente</td></tr>
+      <tr><td>Variante una sola tinta</td><td style="color: var(--nv-orange); font-weight: 600;">Pendiente</td></tr>
+      <tr><td>Icono standalone 32x32px</td><td style="color: var(--nv-orange); font-weight: 600;">Pendiente</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- 03. COLORS -->
+<div class="section fade-in" id="colores">
+  <h2><span class="num">03 &mdash; Colores</span>Paleta de Marca</h2>
+  <div class="divider"></div>
+  <p>La paleta evita deliberadamente el azul generico de fintech. Naranja-dorado transmite energia y oportunidad. Morado diferencia y aporta premium. Navy es la base solida y profesional. <strong>Hace click en cualquier color para copiar el hex.</strong></p>
+
+  <h3>Colores primarios</h3>
+  <div class="palette">
+    <div class="color-card" data-color="#1A1F2E">
+      <div class="color-swatch" style="background: #1A1F2E;"><span>Base</span></div>
+      <div class="color-info"><div class="name">Navy</div><div class="hex">#1A1F2E</div></div>
+    </div>
+    <div class="color-card" data-color="#F5820A">
+      <div class="color-swatch" style="background: #F5820A;"><span>Primario</span></div>
+      <div class="color-info"><div class="name">Naranja</div><div class="hex">#F5820A</div></div>
+    </div>
+    <div class="color-card" data-color="#F5C518">
+      <div class="color-swatch" style="background: #F5C518;"><span>Secundario</span></div>
+      <div class="color-info"><div class="name">Dorado</div><div class="hex">#F5C518</div></div>
+    </div>
+    <div class="color-card" data-color="#7B4FD4">
+      <div class="color-swatch" style="background: #7B4FD4;"><span>Terciario</span></div>
+      <div class="color-info"><div class="name">Morado</div><div class="hex">#7B4FD4</div></div>
+    </div>
+    <div class="color-card" data-color="#FFFFFF">
+      <div class="color-swatch" style="background: #FFFFFF; border: 1px solid #ddd;"><span style="color: #888; text-shadow: none;">Texto</span></div>
+      <div class="color-info"><div class="name">Blanco</div><div class="hex">#FFFFFF</div></div>
+    </div>
+  </div>
+
+  <h3>Variantes</h3>
+  <div class="palette">
+    <div class="color-card" data-color="#C56800">
+      <div class="color-swatch" style="background: #C56800;"><span>Dark</span></div>
+      <div class="color-info"><div class="name">Naranja Dark</div><div class="hex">#C56800</div></div>
+    </div>
+    <div class="color-card" data-color="#FF9A2E">
+      <div class="color-swatch" style="background: #FF9A2E;"><span>Light</span></div>
+      <div class="color-info"><div class="name">Naranja Light</div><div class="hex">#FF9A2E</div></div>
+    </div>
+    <div class="color-card" data-color="#C49E00">
+      <div class="color-swatch" style="background: #C49E00;"><span>Dark</span></div>
+      <div class="color-info"><div class="name">Dorado Dark</div><div class="hex">#C49E00</div></div>
+    </div>
+    <div class="color-card" data-color="#FFD84D">
+      <div class="color-swatch" style="background: #FFD84D;"><span style="color: #555; text-shadow: none;">Light</span></div>
+      <div class="color-info"><div class="name">Dorado Light</div><div class="hex">#FFD84D</div></div>
+    </div>
+    <div class="color-card" data-color="#5A35A8">
+      <div class="color-swatch" style="background: #5A35A8;"><span>Dark</span></div>
+      <div class="color-info"><div class="name">Morado Dark</div><div class="hex">#5A35A8</div></div>
+    </div>
+    <div class="color-card" data-color="#9B74E8">
+      <div class="color-swatch" style="background: #9B74E8;"><span>Light</span></div>
+      <div class="color-info"><div class="name">Morado Light</div><div class="hex">#9B74E8</div></div>
+    </div>
+    <div class="color-card" data-color="#0E1119">
+      <div class="color-swatch" style="background: #0E1119;"><span>Dark</span></div>
+      <div class="color-info"><div class="name">Navy Dark</div><div class="hex">#0E1119</div></div>
+    </div>
+    <div class="color-card" data-color="#252B3F">
+      <div class="color-swatch" style="background: #252B3F;"><span>Light</span></div>
+      <div class="color-info"><div class="name">Navy Light</div><div class="hex">#252B3F</div></div>
+    </div>
+  </div>
+
+  <h3>Neutros</h3>
+  <div class="palette">
+    <div class="color-card" data-color="#222230">
+      <div class="color-swatch" style="background: #222230;"><span>900</span></div>
+      <div class="color-info"><div class="name">Gray 900</div><div class="hex">#222230</div></div>
+    </div>
+    <div class="color-card" data-color="#555566">
+      <div class="color-swatch" style="background: #555566;"><span>700</span></div>
+      <div class="color-info"><div class="name">Gray 700</div><div class="hex">#555566</div></div>
+    </div>
+    <div class="color-card" data-color="#888899">
+      <div class="color-swatch" style="background: #888899;"><span>500</span></div>
+      <div class="color-info"><div class="name">Gray 500</div><div class="hex">#888899</div></div>
+    </div>
+    <div class="color-card" data-color="#CCCCDD">
+      <div class="color-swatch" style="background: #CCCCDD;"><span style="color: #555; text-shadow: none;">300</span></div>
+      <div class="color-info"><div class="name">Gray 300</div><div class="hex">#CCCCDD</div></div>
+    </div>
+    <div class="color-card" data-color="#F0F0F5">
+      <div class="color-swatch" style="background: #F0F0F5; border: 1px solid #ddd;"><span style="color: #888; text-shadow: none;">100</span></div>
+      <div class="color-info"><div class="name">Gray 100</div><div class="hex">#F0F0F5</div></div>
+    </div>
+  </div>
+
+  <h3>Uso de colores</h3>
+  <table class="voice-table">
+    <tr><th>Color</th><th>Cuando usarlo</th></tr>
+    <tr><td><span style="color: var(--nv-orange);">Naranja</span></td><td>CTAs principales, botones, acentos, precios. El color de <strong>"accion"</strong>.</td></tr>
+    <tr><td><span style="color: var(--nv-gold);">Dorado</span></td><td>Highlights, badges premium, gradientes con naranja. El color de <strong>"valor"</strong>.</td></tr>
+    <tr><td><span style="color: var(--nv-purple);">Morado</span></td><td>Plan Ultra, elementos premium, acentos secundarios. El color de <strong>"exclusivo"</strong>.</td></tr>
+    <tr><td><span style="color: var(--nv-navy);">Navy</span></td><td>Fondos principales, headers, sidebar. El color <strong>"base"</strong>.</td></tr>
+    <tr><td><span style="color: var(--nv-gray-500);">Grays</span></td><td>Texto secundario, bordes, fondos sutiles, UI elements.</td></tr>
+  </table>
+
+  <h3>Gradientes de marca</h3>
+  <div class="palette">
+    <div class="color-card" data-color="linear-gradient(90deg, #F5820A, #F5C518)">
+      <div class="color-swatch" style="background: linear-gradient(90deg, #F5820A, #F5C518); height: 80px;"><span>Naranja &rarr; Dorado</span></div>
+      <div class="color-info"><div class="name">Gradiente Calido</div><div class="hex">CTA / precios</div></div>
+    </div>
+    <div class="color-card" data-color="linear-gradient(135deg, #5A35A8, #7B4FD4)">
+      <div class="color-swatch" style="background: linear-gradient(135deg, #5A35A8, #7B4FD4); height: 80px;"><span>Morado Dark &rarr; Morado</span></div>
+      <div class="color-info"><div class="name">Gradiente Premium</div><div class="hex">Plan Ultra</div></div>
+    </div>
+    <div class="color-card" data-color="linear-gradient(135deg, #0E1119, #1A1F2E, #5A35A8)">
+      <div class="color-swatch" style="background: linear-gradient(135deg, #0E1119, #1A1F2E, #5A35A8); height: 80px;"><span>Navy &rarr; Morado</span></div>
+      <div class="color-info"><div class="name">Gradiente Fondo</div><div class="hex">Cover / hero</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 04. TYPOGRAPHY -->
+<div class="section-dark">
+  <div class="section fade-in" id="tipografia">
+    <h2><span class="num">04 &mdash; Tipografia</span>Inter</h2>
+    <div class="divider"></div>
+    <p>Inter es la tipografia principal de Novaly. Disenada para pantallas, con excelente legibilidad en todos los tamanos. Se usa tanto en la PWA como en la landing page.</p>
+
+    <div class="type-sample">
+      <div class="label">Display &mdash; Inter 900 / 3rem</div>
+      <div class="demo" style="font-size: 3rem; font-weight: 900; letter-spacing: -0.02em;">Tu gente es tu negocio</div>
+    </div>
+    <div class="type-sample">
+      <div class="label">Heading 1 &mdash; Inter 800 / 2rem</div>
+      <div class="demo" style="font-size: 2rem; font-weight: 800;">Cadenas de ahorro rotativo</div>
+    </div>
+    <div class="type-sample">
+      <div class="label">Heading 2 &mdash; Inter 700 / 1.5rem</div>
+      <div class="demo" style="font-size: 1.5rem; font-weight: 700;">Programa de afiliados recurrente</div>
+    </div>
+    <div class="type-sample">
+      <div class="label">Heading 3 &mdash; Inter 600 / 1.25rem</div>
+      <div class="demo" style="font-size: 1.25rem; font-weight: 600;">Comisiones del 50% al 85% segun tu plan</div>
+    </div>
+    <div class="type-sample">
+      <div class="label">Body &mdash; Inter 400 / 1rem</div>
+      <div class="demo" style="font-size: 1rem; font-weight: 400;">Novaly es la plataforma que combina ahorro colaborativo con marketing de afiliados. Crea cadenas ROSCA, ahorra con tu grupo, y gana comisiones recurrentes por cada persona que refieras.</div>
+    </div>
+    <div class="type-sample">
+      <div class="label">Small / Caption &mdash; Inter 500 / 0.875rem</div>
+      <div class="demo" style="font-size: 0.875rem; font-weight: 500; color: var(--nv-gray-500);">Planes desde $29.000 COP/mes &middot; Todos incluyen afiliados &middot; Registrate gratis</div>
+    </div>
+
+    <h3>Escala tipografica (Tailwind)</h3>
+    <table class="voice-table">
+      <tr><th>Nivel</th><th>Clase Tailwind</th><th>Peso</th></tr>
+      <tr><td>Display</td><td>text-5xl / text-4xl</td><td>font-black (900)</td></tr>
+      <tr><td>H1</td><td>text-3xl</td><td>font-extrabold (800)</td></tr>
+      <tr><td>H2</td><td>text-2xl</td><td>font-bold (700)</td></tr>
+      <tr><td>H3</td><td>text-xl</td><td>font-semibold (600)</td></tr>
+      <tr><td>Body</td><td>text-base</td><td>font-normal (400)</td></tr>
+      <tr><td>Small</td><td>text-sm</td><td>font-medium (500)</td></tr>
+      <tr><td>Caption</td><td>text-xs</td><td>font-medium (500)</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- 05. VOICE -->
+<div class="section-navy">
+  <div class="section fade-in" id="voz">
+    <h2 style="color: white;"><span class="num">05 &mdash; Tono de Voz</span>Como Hablamos</h2>
+    <div class="divider"></div>
+    <p>Novaly habla como un amigo que sabe de finanzas &mdash; cercano, directo, transparente. Nunca como un banco. Nunca como un guru motivacional. Usa "tu", nunca "usted". Sin rodeos, sin letra pequena.</p>
+
+    <h3>Los 4 pilares</h3>
+    <table class="voice-table">
+      <tr><th>Pilar</th><th>Significado</th></tr>
+      <tr><td><strong>Coloquial con proposito</strong></td><td>Habla como habla Colombia, pero con intencion. "Tu cadena ya esta lista. Ahora mueve ese dinero." &mdash; no "Su solicitud ha sido procesada exitosamente."</td></tr>
+      <tr><td><strong>Empoderador, no prometedor</strong></td><td>No promete riqueza facil. Empodera a tomar accion. "Con 5 referidos ya estas generando un ingreso extra real." &mdash; no "Hazte millonario refiriendo amigos!"</td></tr>
+      <tr><td><strong>Transparente y sin miedo</strong></td><td>Explica como funciona todo sin esconder nada. "Las cadenas son entre tu y tu grupo. Nosotros solo las organizamos." &mdash; no "Plataforma segura con tecnologia de punta."</td></tr>
+      <tr><td><strong>Celebra la comunidad, no el dinero</strong></td><td>El dinero es el resultado, no el protagonista. "Tu circulo crece. Tu capital tambien." &mdash; no "Mas dinero para ti cada mes!"</td></tr>
+    </table>
+
+    <h3>Do's &amp; Don'ts</h3>
+    <table class="voice-table">
+      <tr><th class="do">Si</th><th class="dont">No</th></tr>
+      <tr><td>"Ahorra con tu grupo, sin papeleos"</td><td>"Nuestra solucion de ahorro colaborativo enterprise-grade"</td></tr>
+      <tr><td>"Cobra comisiones cada mes que tu referido siga activo"</td><td>"Monetice su red de contactos con nuestro programa de referidos"</td></tr>
+      <tr><td>"Tu cadena ya esta lista. Ahora mueve ese dinero"</td><td>"Su solicitud de cadena ha sido procesada exitosamente"</td></tr>
+      <tr><td>"Pruebalo gratis, sin tarjeta"</td><td>"Solicite una demo con nuestro equipo comercial"</td></tr>
+      <tr><td>"Con 5 referidos ya generas un ingreso extra real"</td><td>"Hazte millonario refiriendo amigos!"</td></tr>
+    </table>
+
+    <h3>Guia por canal</h3>
+    <table class="voice-table">
+      <tr><th>Canal</th><th>Tono</th></tr>
+      <tr><td>Onboarding / app</td><td>Calido, guia paso a paso, sin jerga</td></tr>
+      <tr><td>Redes sociales</td><td>Energetico, corto, con gancho emocional</td></tr>
+      <tr><td>Emails / notificaciones</td><td>Directo, informativo, accionable</td></tr>
+      <tr><td>Legal / T&amp;C</td><td>Claro en espanol simple, sin evasivas</td></tr>
+      <tr><td>Afiliados / ventas</td><td>Aspiracional pero honesto, con numeros reales</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- 06. APPLICATIONS -->
+<div class="section fade-in" id="aplicaciones">
+  <h2><span class="num">06 &mdash; Aplicaciones</span>Variables CSS &amp; Tailwind</h2>
+  <div class="divider"></div>
+  <p>Para implementar la paleta en la plataforma y landing:</p>
+
+  <div class="type-sample">
+    <div class="label">Tailwind Config (colors)</div>
+<pre class="demo" style="font-family: 'Courier New', monospace; font-size: 0.85rem; line-height: 1.8; white-space: pre-wrap;">nv: {
+  orange:  { DEFAULT: '#F5820A', dark: '#C56800', light: '#FF9A2E' },
+  gold:    { DEFAULT: '#F5C518', dark: '#C49E00', light: '#FFD84D' },
+  purple:  { DEFAULT: '#7B4FD4', dark: '#5A35A8', light: '#9B74E8' },
+  navy:    { DEFAULT: '#1A1F2E', dark: '#0E1119', light: '#252B3F' },
+  white:   '#FFFFFF',
+  gray:    {
+    100: '#F0F0F5', 300: '#CCCCDD', 500: '#888899',
+    700: '#555566', 900: '#222230'
+  }
+}
+
+// fontFamily
+sans: ['Inter', ...defaultTheme.fontFamily.sans]</pre>
+  </div>
+
+  <div class="type-sample">
+    <div class="label">CSS Custom Properties</div>
+<pre class="demo" style="font-family: 'Courier New', monospace; font-size: 0.85rem; line-height: 1.8; white-space: pre-wrap;">:root {
+  --nv-orange: #F5820A;
+  --nv-orange-dark: #C56800;
+  --nv-orange-light: #FF9A2E;
+  --nv-gold: #F5C518;
+  --nv-gold-dark: #C49E00;
+  --nv-gold-light: #FFD84D;
+  --nv-purple: #7B4FD4;
+  --nv-purple-dark: #5A35A8;
+  --nv-purple-light: #9B74E8;
+  --nv-navy: #1A1F2E;
+  --nv-navy-dark: #0E1119;
+  --nv-navy-light: #252B3F;
+
+  /* Gradientes */
+  --gradient-warm: linear-gradient(90deg, #F5820A, #F5C518);
+  --gradient-premium: linear-gradient(135deg, #5A35A8, #7B4FD4);
+  --gradient-cover: linear-gradient(135deg, #0E1119, #1A1F2E, #5A35A8);
+}</pre>
+  </div>
+</div>
+
+<!-- 07. SOCIAL MEDIA -->
+<div class="section-dark">
+  <div class="section fade-in" id="social">
+    <h2><span class="num">07 &mdash; Social Media</span>Presencia Digital</h2>
+    <div class="divider"></div>
+    <p>Guia para mantener la marca consistente en todas las plataformas sociales. Cada publicacion es una oportunidad de reforzar la identidad de Novaly.</p>
+
+    <h3>Foto de perfil</h3>
+    <table class="voice-table">
+      <tr><th>Plataforma</th><th>Formato</th><th>Recomendacion</th></tr>
+      <tr><td>Instagram / TikTok / X</td><td>400&times;400px, PNG</td><td>Icono NX sobre fondo navy (#1A1F2E). Sin wordmark.</td></tr>
+      <tr><td>LinkedIn / Facebook</td><td>400&times;400px, PNG</td><td>Icono NX sobre fondo navy. Consistente con las demas.</td></tr>
+      <tr><td>WhatsApp / Telegram</td><td>500&times;500px, PNG</td><td>Icono NX centrado, fondo navy. Se recorta circular.</td></tr>
+    </table>
+
+    <h3>Banner / portada</h3>
+    <table class="voice-table">
+      <tr><th>Plataforma</th><th>Tamano</th><th>Contenido</th></tr>
+      <tr><td>Instagram Highlights</td><td>1080&times;1920px</td><td>Fondo navy + gradiente calido sutil. Icono + tagline.</td></tr>
+      <tr><td>X / Twitter</td><td>1500&times;500px</td><td>Gradiente navy &rarr; morado. Logo + "Tu gente es tu negocio."</td></tr>
+      <tr><td>LinkedIn</td><td>1584&times;396px</td><td>Logo completo centrado sobre fondo navy.</td></tr>
+      <tr><td>YouTube</td><td>2560&times;1440px</td><td>Logo + tagline + novalyxcash.com</td></tr>
+    </table>
+
+    <h3>Estilo de publicaciones</h3>
+    <table class="voice-table">
+      <tr><th>Tipo</th><th>Guia</th></tr>
+      <tr><td>Educativo</td><td>Fondo navy o blanco. Titulo en Inter 700 naranja. Cuerpo en blanco/gray-900.</td></tr>
+      <tr><td>Testimonial</td><td>Foto real del usuario + quote. Gradiente calido sutil en esquina.</td></tr>
+      <tr><td>Promo / CTA</td><td>Gradiente naranja &rarr; dorado de fondo. Texto blanco. Boton "Registrate" visible.</td></tr>
+      <tr><td>Dato / stats</td><td>Fondo morado oscuro. Numero grande en dorado. Contexto en blanco.</td></tr>
+    </table>
+
+    <h3>Hashtags principales</h3>
+    <p style="margin-top: 0.5rem;"><strong>#Novaly</strong> &middot; <strong>#NovalyXCash</strong> &middot; <strong>#TuGenteEsTuNegocio</strong> &middot; <strong>#AhorroColaborativo</strong> &middot; <strong>#CadenasDeAhorro</strong> &middot; <strong>#ROSCA</strong></p>
+
+    <h3>Reglas de publicacion</h3>
+    <table class="voice-table">
+      <tr><th class="do">Si</th><th class="dont">No</th></tr>
+      <tr><td>Usar la paleta de colores oficial</td><td>Usar colores random o filtros que distorsionen la marca</td></tr>
+      <tr><td>Mantener Inter como tipografia principal</td><td>Usar fuentes decorativas, script, o Comic Sans</td></tr>
+      <tr><td>Incluir el logo o icono NX en cada pieza</td><td>Publicar piezas sin ningun elemento de marca</td></tr>
+      <tr><td>Hablar en el tono coloquial de Novaly</td><td>Usar lenguaje corporativo o de "guru" motivacional</td></tr>
+      <tr><td>Fotos reales de usuarios y contextos colombianos</td><td>Stock photos genericas de gente en traje</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- 08. ASSETS -->
+<div class="section fade-in" id="assets">
+  <h2><span class="num">08 &mdash; Assets</span>Descargables</h2>
+  <div class="divider"></div>
+  <p>Todos los recursos de marca listos para usar. Descarga el logo en distintos formatos y fondos.</p>
+
+  <h3>Logo principal</h3>
+  <div class="logo-grid">
+    <div class="logo-box dark">
+      <img src="logo.svg" alt="Logo SVG">
+      <a class="download-btn" href="logo.svg" download="novaly-logo.svg" title="Descargar SVG"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></a>
+      <span class="tag">SVG (vectorial)</span>
+    </div>
+  </div>
+
+  <h3>Estructura del repositorio</h3>
+  <div class="type-sample">
+    <div class="label">Archivos en este repo</div>
+<pre class="demo" style="font-family: 'Courier New', monospace; font-size: 0.85rem; line-height: 1.8; white-space: pre-wrap;">brand/
+├── index.html          # Brand Guide (esta pagina)
+├── logo.svg            # Logo principal vectorial
+├── README.md           # Documentacion del repo
+└── .github/
+    └── workflows/
+        └── pages.yml   # Deploy automatico a GitHub Pages</pre>
+  </div>
+
+  <h3>Como usar los assets</h3>
+  <table class="voice-table">
+    <tr><th>Formato</th><th>Cuando usarlo</th></tr>
+    <tr><td>SVG</td><td>Web, apps, cualquier tamano. <strong>Formato preferido.</strong></td></tr>
+    <tr><td>PNG (si se genera)</td><td>Redes sociales, presentaciones, contextos que no soporten SVG.</td></tr>
+    <tr><td>Favicon</td><td>Usar el icono NX recortado a 32&times;32px y 16&times;16px.</td></tr>
+  </table>
+
+  <h3>Licencia de uso</h3>
+  <p>Estos assets son propiedad de <strong>Novaly X Cash</strong>. Su uso esta permitido exclusivamente para representar la marca en contextos autorizados &mdash; afiliados, partners, y material oficial. No se permite la modificacion del logo ni el uso en contextos que puedan danar la reputacion de la marca.</p>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <img src="logo.svg" alt="Novaly">
+  <p>Novaly X Cash Brand Guide v1.0 &middot; Marzo 2026</p>
+  <div class="footer-links">
+    <a href="https://novalyxcash.com">novalyxcash.com</a>
+    <a href="https://github.com/novalyxcash">GitHub</a>
+  </div>
+</div>
+
+<script>
+  // === NAV: show after scrolling past cover ===
+  const nav = document.getElementById('nav');
+  const cover = document.querySelector('.cover');
+
+  const navObserver = new IntersectionObserver(([entry]) => {
+    nav.classList.toggle('visible', !entry.isIntersecting);
+  }, { threshold: 0.1 });
+  navObserver.observe(cover);
+
+  // === SCROLL SPY ===
+  const sections = document.querySelectorAll('.section[id]');
+  const navLinks = document.querySelectorAll('.nav a');
+
+  const spyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -70% 0px' });
+  sections.forEach(s => spyObserver.observe(s));
+
+  // === SMOOTH SCROLL ===
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // === FADE IN ON SCROLL ===
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
+
+  // === DOWNLOAD LOGO ===
+  document.querySelectorAll('.download-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const img = btn.closest('.logo-box').querySelector('img');
+      const filename = btn.dataset.filename || 'novaly-logo.png';
+      fetch(img.src)
+        .then(r => r.blob())
+        .then(blob => {
+          const a = document.createElement('a');
+          a.href = URL.createObjectURL(blob);
+          a.download = filename;
+          a.click();
+          URL.revokeObjectURL(a.href);
+          showToast(`${filename} descargado`);
+        });
+    });
+  });
+
+  // === COPY COLOR TO CLIPBOARD ===
+  const toast = document.getElementById('toast');
+  let toastTimeout;
+
+  function showToast(msg) {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => toast.classList.remove('show'), 1500);
+  }
+
+  document.querySelectorAll('.color-card[data-color]').forEach(card => {
+    card.addEventListener('click', () => {
+      const color = card.dataset.color;
+      navigator.clipboard.writeText(color).then(() => showToast(`${color} copiado`));
+    });
+  });
+</script>
+
+</body>
+</html>
